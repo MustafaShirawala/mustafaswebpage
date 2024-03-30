@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions for My Best Friend </title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5; /* Light gray */
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3 {
+        color: #333;
+    }
+    .question {
+        margin-bottom: 20px;
+    }
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff69b4; /* Pink */
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .button:hover {
+        background-color: #ff1493; /* Darker pink */
+    }
+    .answer-input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .message {
+        margin-top: 30px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="page1">
+    <div class="question">
+        <h2  style="text-align: center;">hii Zahara 👋</h2>
+        <input type="text" class="answer-input" id="answer1">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="recordAnswer('answer1', 'page2')">Next ➡️</button>
+    </div>
+</div>
+
+<div class="container" id="page2" style="display: none;">
+    <div class="question">
+        <h2 style="text-align: center;">How are you ?🤔</h2>
+        <input type="text" class="answer-input" id="answer2">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="recordAnswer('answer2', 'page3')">Next ➡️</button>
+    </div>
+</div>
+
+<div class="container" id="page3" style="display: none;">
+    <div class="question">
+        <h2 style="text-align: center;">Zahara i really miss talking to you  🥺</h2>
+        <input type="text" class="answer-input" id="answer3">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="recordAnswer('answer3', 'page4')">Next ➡️</button>
+    </div>
+</div>
+
+<div class="container" id="page4" style="display: none;">
+    <div class="question">
+        <h2 style="text-align: center;">would you be down if we start our friendship again from square one 🤔</h2>
+        <input type="text" class="answer-input" id="answer4">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="recordAnswer('answer4', 'page5')">Next ➡️</button>
+    </div>
+</div>
+
+<div class="container" id="page5" style="display: none;">
+    <div class="question">
+        <h2 style="text-align: center;">if no ,i wish u have a beautiful life ahead 👍</h2>
+        <input type="text" class="answer-input" id="answer5">
+    </div>
+    <div class="button-container">
+        <button  class="button" onclick="recordAnswer('answer5', 'thankYouPage')" >Next ➡️</button>
+
+    </div>
+</div>
+
+<div class="container" id="thankYouPage" style="display: none;">
+    <h1 style="text-align: center;">Thank You! for making it to the very end</h1>
+    <div class="message">
+        <p>
+            <h3>
+                <ul style="text-align: center;">
+                    <li><h4>things i want u to know</h4></li>
+                    <li>i never wanted to hurt your feeling</li>
+                    <li>neither did i wanted to get in a relationship as of now </li>
+                    <li>i just wanted u to know how i feel </li>
+                    <li>what ever i said about u while we were talking i ment everything not because i had feelings for u but cause i genuinely  thought soo</li>
+                    <li>i dont know if u wouuld make it this far or no , but i made this website to test my skill but moreover to convey my thoughts </li>
+                    <li>i wish we could start from block one </li>
+                    <li>i am still thankful to have a friend like u and all the things  you helped me with.</li>
+                    <li>i hope you do great in USA</li>
+                    <li>And keep eating lots of dal chaval</li>
+                    
+    
+                </ul>
+            </h3>
+        </p>
+    </div>
+    <h1 style="text-align: center;">BYE 👋</h1>
+    <div class="button-container">
+        <button  class="button" action="https://api.web3forms.com/submit" method="POST" >Finish➡️</button>
+
+    </div>
+    <input type="hidden" name="access_key" value="68405663-427c-4385-9a7a-89c5b4c80b33">
+
+</div>
+
+<script>
+    // Function to record the answer and navigate to the next page
+    function recordAnswer(answerId, nextPageId) {
+        // Record the answer in local storage
+        var answer = document.getElementById(answerId).value;
+        localStorage.setItem(answerId, answer);
+        
+        // Clear the input field
+        document.getElementById(answerId).value = "";
+        
+        // Show the next page
+        showPage(nextPageId);
+        
+        
+    }
+
+    // Function to show/hide pages
+    function showPage(pageId) {
+        var pages = document.getElementsByClassName("container");
+        for (var i = 0; i < pages.length; i++) {
+            if (pages[i].id === pageId) {
+                pages[i].style.display = "block";
+            } else {
+                pages[i].style.display = "none";
+            }
+        }
+    }
+
+   
+    
+</script>
+
+
+</body>
+</html>
